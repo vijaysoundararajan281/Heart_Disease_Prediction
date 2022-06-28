@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Heart Disease Predictor</title>
+        <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet'>
+        <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css')}}">
+        
+    </head>
+    <body>
+        
+        <div class="login">
+            <h1><font color="#FFFFFF">Heart Disease Predictor </font></h1>
+            
+            <form action="{{url_for('predict')}}"method="post">
+                <input type="text" name="Age" placeholder="Enter Age:" required="required"><br><br>
+                <input type="text" name="Sex" placeholder="Enter Sex:" required="required"><br><br>
+                <input type="text" name="ChestPainType" placeholder="Enter ChestPainType:" required="required"><br><br>
+                <input type="text" name="RestingBP" placeholder="Enter RestingBP:" required="required"><br><br>
+                <input type="text" name="Cholestrol" placeholder="Enter Cholestrol:" required="required"><br><br>
+                <input type="text" name="FastingBS" placeholder="Enter FastingBS:" required="required"><br><br>
+                <input type="text" name="RestingECG" placeholder="Enter RestingECG:" required="required"><br><br>
+                <input type="text" name="MaxHR" placeholder="Enter MaxHR:" required="required"><br><br>
+                <input type="text" name="ExerciseAngina" placeholder="Enter ExerciseAngina:" required="required"><br><br>
+                <input type="text" name="Oldpeak" placeholder="Enter Oldpeak:" required="required"><br><br>
+                <input type="text" name="ST_Sope" placeholder="Enter ST_Sope:" required="required"><br><br>
+                <button type="submit" class="btn btn-primary btn-block btn-large">Prediction</button>
+                
+            </form>
+            <br>
+            <br>
+            <h2><p>
+            <font color="#000000">
+            <p><span style="background-color:grey">
+            {{prediction_text}}
+        </span></p>
+        </font>
+        </p>
+        </p>
+    </h2>
+        </div>
+    </body>
+</html>
